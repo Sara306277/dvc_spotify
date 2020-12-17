@@ -1,0 +1,29 @@
+stages:
+  prep_graph:
+    cmd: python src/prepare.py data/related_artists.json
+    deps:
+    - data/related_artists.json
+    - src/prepare.py
+    outs:
+    - data/prepared
+  desc_graph:
+    cmd: python src/imgraph.py data/prepared/outputgenesdf.csv
+    deps:
+    - data/prepared/
+    - src/imgraph.py
+    outs:
+    - data/described/
+  desc_image:
+    cmd: python src/imdesc.py data/described/outputdesc.csv
+    deps:
+    - data/described/
+    - src/imdesc.py
+    outs:
+    - data/described_graph
+  graph_image:
+    cmd: python src/big_graph.py data/related_artists.json
+    deps:
+    - data/related_artists.json
+    - src/big_graph.py
+    outs:
+    - data/sna_graph/

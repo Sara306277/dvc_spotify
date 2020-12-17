@@ -1,0 +1,4 @@
+outs:
+- md5: 8c48e8048d9e5360eaed69f7a1ba867e
+  size: 1013218
+  path: related_artists.json

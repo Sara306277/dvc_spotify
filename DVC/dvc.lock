@@ -1,0 +1,58 @@
+prep_graph:
+  cmd: python src/prepare.py data/related_artists.json
+  deps:
+  - path: data/related_artists.json
+    md5: 8c48e8048d9e5360eaed69f7a1ba867e
+    size: 1013218
+  - path: src/prepare.py
+    md5: fa45e2d98a139d00e035cf7c432dffbb
+    size: 932
+  outs:
+  - path: data/prepared
+    md5: a97b8862df23df5bf7a2abefa87a45dc.dir
+    size: 539604
+    nfiles: 1
+desc_graph:
+  cmd: python src/imgraph.py data/prepared/outputgenesdf.csv
+  deps:
+  - path: data/prepared/
+    md5: a97b8862df23df5bf7a2abefa87a45dc.dir
+    size: 539604
+    nfiles: 1
+  - path: src/imgraph.py
+    md5: 3b24a0388455d8ddfe2836ae21fadca2
+    size: 1054
+  outs:
+  - path: data/described/
+    md5: f4b365d59c8899baf4f2d64775250d55.dir
+    size: 297
+    nfiles: 1
+desc_image:
+  cmd: python src/imdesc.py data/described/outputdesc.csv
+  deps:
+  - path: data/described/
+    md5: f4b365d59c8899baf4f2d64775250d55.dir
+    size: 297
+    nfiles: 1
+  - path: src/imdesc.py
+    md5: fc4a4dbc4f9b9288071e4e7954699478
+    size: 896
+  outs:
+  - path: data/described_graph
+    md5: 0d167422fc52a319ecafc124cf2f329e.dir
+    size: 36682
+    nfiles: 1
+graph_image:
+  cmd: python src/big_graph.py data/related_artists.json
+  deps:
+  - path: data/related_artists.json
+    md5: 8c48e8048d9e5360eaed69f7a1ba867e
+    size: 1013218
+  - path: src/big_graph.py
+    md5: 2015db20b5394c1aff2c6b0b64b96fc7
+    size: 836
+  outs:
+  - path: data/sna_graph/
+    md5: e6a2bff15616e69a07e893539bc15e4c.dir
+    size: 103369
+    nfiles: 1
