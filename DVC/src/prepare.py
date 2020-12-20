@@ -14,8 +14,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from random import choice
 
-#params = yaml.safe_load(open('params.yaml'))['prepare']
-
 if len(sys.argv) != 2:
     sys.stderr.write("Arguments error. Usage:\n")
     sys.stderr.write("\tpython prepare.py data-file\n")
@@ -29,8 +27,5 @@ with open(sys.argv[1]) as f:
 g = nx.Graph(json_graph.node_link_graph(js_graph))
 
 df = pd.DataFrame(js_graph["nodes"])
-#df_csv = df.to_csv(index=False)
 
-#path = os.path.join('data', 'prepared', 'elaborated_data.json')
-#json.dump(output_data, open(path, 'w+'))
 df.to_csv(os.path.join('data/prepared', 'outputgenesdf.csv'))
