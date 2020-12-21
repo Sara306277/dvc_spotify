@@ -1,0 +1,14 @@
+cmd: python src/imgraph.py data/prepared/outputgenesdf.csv
+deps:
+- path: data/prepared/
+  md5: a97b8862df23df5bf7a2abefa87a45dc.dir
+  size: 539604
+  nfiles: 1
+- path: src/imgraph.py
+  md5: 3b24a0388455d8ddfe2836ae21fadca2
+  size: 1054
+outs:
+- path: data/described/
+  md5: f4b365d59c8899baf4f2d64775250d55.dir
+  size: 297
+  nfiles: 1

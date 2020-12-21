@@ -1,0 +1,13 @@
+cmd: python src/big_graph.py data/related_artists.json
+deps:
+- path: data/related_artists.json
+  md5: 8c48e8048d9e5360eaed69f7a1ba867e
+  size: 1013218
+- path: src/big_graph.py
+  md5: 2015db20b5394c1aff2c6b0b64b96fc7
+  size: 836
+outs:
+- path: data/sna_graph/
+  md5: e6a2bff15616e69a07e893539bc15e4c.dir
+  size: 103369
+  nfiles: 1

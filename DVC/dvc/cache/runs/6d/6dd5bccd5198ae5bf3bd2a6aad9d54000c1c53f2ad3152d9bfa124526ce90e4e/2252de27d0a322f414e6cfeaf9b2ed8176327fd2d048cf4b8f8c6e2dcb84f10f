@@ -1,0 +1,14 @@
+cmd: python src/imdesc.py data/described/outputdesc.csv
+deps:
+- path: data/described/
+  md5: f4b365d59c8899baf4f2d64775250d55.dir
+  size: 297
+  nfiles: 1
+- path: src/imdesc.py
+  md5: fc4a4dbc4f9b9288071e4e7954699478
+  size: 896
+outs:
+- path: data/described_graph
+  md5: 0d167422fc52a319ecafc124cf2f329e.dir
+  size: 36682
+  nfiles: 1
